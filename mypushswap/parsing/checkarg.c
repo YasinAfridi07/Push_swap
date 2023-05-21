@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checkarg.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: yusman <yusman@student.42.fr>              +#+  +:+       +#+        */
+/*   By: fkhan <fkhan@student.42abudhabi.ae>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 07:14:32 by yusman            #+#    #+#             */
-/*   Updated: 2023/05/14 20:58:47 by yusman           ###   ########.fr       */
+/*   Updated: 2023/05/21 21:46:33 by fkhan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,17 @@ char	*argcheck(char **av)
 	args[j] = '\0';
 	return (args);
 }
-// 100 3 2 4 5
 
 int	is_digit(int c)
 {
-	// printf("%c --- %d\n", c, c);
 	if (!((c >= '0' && c <= '9') || (c == ' ') || c == '-' || c == '+'))
 		return (1);
 	return (0);
 }
 
-void letters(char *args)
+void	letters(char *args)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (args[i])
@@ -66,31 +64,31 @@ void letters(char *args)
 }
 void	refactor_ac(t_stack *a, t_stack *b, char **av)
 {
-	char *args; // Combine arguments into a single string
-	char **new_av; // Split the string into an array of strings
-	int len;
-	int i;
+	char	*args;
+	char	**new_av;
+	int		len;
+	int		i;
 
 	args = argcheck(av);
-	letters(args); // Check if string contains only digits, spaces, and signs (+/-)
+	letters(args);
 	new_av = ft_split(args, ' ');
-	free(args); // Free the combined string
+	free(args);
 	len = 0;
-	while (new_av[len]) // Get the length of the array
+	while (new_av[len])
 		len++;
 	a->size = len;
 	b->size = 0;
-	a->data = malloc(sizeof(int) * len); // Allocate memory for stack A
-	b->data = malloc(sizeof(int) * len); // Allocate memory for stack B
+	a->data = malloc(sizeof(int) * len);
+	b->data = malloc(sizeof(int) * len);
 	i = 0;
-	while (i < len) // Convert the array of strings to integers and push onto stack A
+	while (i < len)
 	{
 		a->data[i] = ps_atoi(new_av[i], a, b, new_av);
 		i++;
 	}
-	free_split(new_av); // Free the array of strings
+	free_split(new_av);
 }
-// 100 1 2
+
 void	parsearg(t_stack *a, t_stack *b, char **av)
 {
 	refactor_ac(a, b, av);

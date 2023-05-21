@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: yusman <yusman@student.42.fr>              +#+  +:+       +#+         #
+#    By: fkhan <fkhan@student.42abudhabi.ae>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/16 00:03:07 by yusman            #+#    #+#              #
-#    Updated: 2023/05/14 18:57:24 by yusman           ###   ########.fr        #
+#    Updated: 2023/05/21 23:53:29 by fkhan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,8 +15,12 @@ NAME = push_swap
 SRC		= moves/pa.c moves/pb.c moves/ra.c moves/rra.c\
 moves/sb.c moves/sa.c moves/rr.c moves/rb.c moves/rrb.c\
 parsing/checkarg.c parsing/checksort.c parsing/utils.c \
-sort/numbers.c \
-sort/sort_smallnum.c sort/utils.c push_swap.c\
+sort/numbers.c sort/sort_smallnum.c sort/utils.c push_swap.c \
+sort/sort_large.c sort/stack_set_utils.c sort/stack_set_utils2.c \
+sort/stack_set.c sort/stack_sort_utils.c sort/num_utils.c \
+sort/quick_sort.c sort/stack_divide_conquer_utils.c \
+sort/stack_divide_conquer.c sort/stack_insertsort_a.c \
+sort/stack_insertsort_b.c
 
 
 OBJ		= $(SRC:.c=.o)
