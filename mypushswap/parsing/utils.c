@@ -25,7 +25,7 @@ void	sign_check(char *str, t_stack *a, t_stack *b, char **new_av)
 			k++;
 		if (k > 0)
 		{
-			ft_putstr_fd("Error\n", 2);
+			ft_putstr_fd("2. Error\n", 2);
 			free_split(new_av);
 			free_data(a, b, 1);
 		}
@@ -42,19 +42,19 @@ void	sign_check2(char *str, t_stack *a, t_stack *b, char **new_av)
 	{
 		if ((str[i] == '+' || str[i] == '-') && is_space(str[i + 1]))
 		{
-			ft_putstr_fd("Error\n", 2);
+			ft_putstr_fd("3. Error\n", 2);
 			free_split(new_av);
 			free_data(a, b, 1);
 		}
 		if (ft_isdigit(str[i]) && (str[i + 1] == '+' || str[i + 1] == '-'))
 		{
-			ft_putstr_fd("Error\n", 2);
+			ft_putstr_fd("4. Error\n", 2);
 			free_split(new_av);
 			free_data(a, b, 1);
 		}
 		if ((str[i] == '-' || str[i] == '+') && (!str[i + 1]))
 		{
-			ft_putstr_fd("Error\n", 2);
+			ft_putstr_fd("5. Error\n", 2);
 			free_split(new_av);
 			free_data(a, b, 1);
 		}
@@ -90,14 +90,14 @@ void	is_dup(t_stack *a, t_stack *b)
 	int	j;
 
 	i = 0;
-	while (i <= a->size)
+	while (i < a->size)
 	{
 		j = i + 1;
-		while (j <= a->size)
+		while (j < a->size)
 		{
 			if (a->data[i] == a->data[j])
 			{
-				ft_putstr_fd("Error\n", 2);
+				ft_putstr_fd("6. Error\n", 2);
 				free (a->data);
 				free (b->data);
 				exit (EXIT_FAILURE);
@@ -129,7 +129,7 @@ int	ps_atoi(char *str, t_stack *a, t_stack *b, char **new_av)
 		if ((result > 2147483648 && sign == -1)
 			|| (result > 2147483647 && sign == 1))
 		{
-			ft_putstr_fd("Error\n", 2);
+			ft_putstr_fd("7. Error\n", 2);
 			free_split(new_av);
 			free_data(a, b, 1);
 		}

@@ -40,8 +40,9 @@ char	*argcheck(char **av)
 }
 // 100 3 2 4 5
 
-int	isdigit(int c)
+int	is_digit(int c)
 {
+	// printf("%c --- %d\n", c, c);
 	if (!((c >= '0' && c <= '9') || (c == ' ') || c == '-' || c == '+'))
 		return (1);
 	return (0);
@@ -54,11 +55,11 @@ void letters(char *args)
 	i = 0;
 	while (args[i])
 	{
-		if (isdigit(args[i]))
+		if (is_digit(args[i]))
 		{
 			free(args);
-			ft_putstr_fd("Error\n", 2);
-		exit(EXIT_FAILURE);
+			ft_putstr_fd("1. Error\n", 2);
+			exit(EXIT_FAILURE);
 		}
 		i++;
 	}

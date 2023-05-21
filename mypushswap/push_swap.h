@@ -41,7 +41,7 @@ void	swap(int *a, int *b);
 int	smallnumber(t_stack *a);
 int	bignumber(t_stack *stack);
 int	secound(t_stack *stack);
-int	isdigit(int c);
+int	is_digit(int c);
 char	*argcheck(char **av);
 void	letters(char *args);
 void	free_split(char **str);
