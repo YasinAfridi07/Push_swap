@@ -14,16 +14,16 @@
 
 void	rb(t_stack *b)
 {
-	int	top;
+	int	data[0];
 	int	i;
 
-	top = b->data[0];
+	data[0] = b->data[0];
 	i = 1;
 	while (i < b->size)
 	{
 		b->data[i - 1] = b->data[i];
 		i++;
 	}
-	b->data[i - 1] = top;
+	b->data[i - 1] = data[0];
 	ft_printf("rb\n");
 }

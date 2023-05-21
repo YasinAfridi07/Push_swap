@@ -39,5 +39,5 @@ int	main(int ac, char **av)
 		exit (EXIT_SUCCESS);
 	check_args(ac, av);
 	parsearg(&a, &b, av);
-	parsesort(&a, &b);
+	parsesort(&a, &b, &chunk);
 }

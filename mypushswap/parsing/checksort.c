@@ -31,27 +31,27 @@ void	bubble(int *list, int top)
 	}
 }
 
-// int	*sort_chunk(t_stack *a)
-// {
-// 	int	*list;
-// 	int	i;
+int	*sort_chunk(t_stack *a)
+{
+	int	*list;
+	int	i;
 
-// 	i = 0;// before -1
-// 	list = malloc((a->top + 1) * sizeof(int));
-// 	while (i++ <= a->top)// before ++i
-// 		list[i] = a->data[i];
-// 	bubble(list, a->top);
-// 	return (list);
-// }
+	i = 0;// before -1
+	list = malloc((a->data[0] + 1) * sizeof(int));
+	while (i++ <= a->data[0])// before ++i
+		list[i] = a->data[i];
+	bubble(list, a->data[0]);
+	return (list); // returing array 
+}
 
-void	parsesort(t_stack *a, t_stack *b)
+void	parsesort(t_stack *a, t_stack *b, t_stack *chunk)
 {
 	//print_stack(a);
 	//printf("Here");
 	//printf("%d",smallnumber(a));
 	b->flag = 0;
 	if (a->size == 1)
-		free_all(a, b, 1);
+		free_all(a, b, chunk ,1);
 	else if (a->size == 2)
 	{
 		if (a->data[a->size] > a->data[a->size + 1])
@@ -69,6 +69,7 @@ void	parsesort(t_stack *a, t_stack *b)
 	}
 	else if (a->size == 5)
 		sort_five(a, b);
+	chunk_sort(a, b, chunk);
 }
 
 void	print_stack(t_stack *stk)

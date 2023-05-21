@@ -22,11 +22,11 @@ void free_split(char **str)
 	free (str);
 }
 
-void free_all(t_stack *a, t_stack *b, int flag)// changed
+void free_all(t_stack *a, t_stack *b, t_stack *chunk, int flag)
 {
 	free(a->data);
 	free(b->data);
-//	free(chunk->data);
+	free(chunk->data);
 	if(flag == 0)
 		exit(EXIT_FAILURE);
 	else if (flag == 1)
@@ -42,11 +42,11 @@ void	swap(int *a, int *b)
 	*b = tmp;
 }
 
-// void	init_chunk(t_stack *a, t_stack *chunk)
-// {
-// 	chunk->data = sort_chunk(a);
-// 	chunk->top = a->top;
-// }
+void	init_chunk(t_stack *a, t_stack *chunk)
+{
+	chunk->data = sort_chunk(a);
+	chunk->data[0] = a->data[0];
+}
 
 void	free_data(t_stack *a, t_stack *b, int flag)
 {

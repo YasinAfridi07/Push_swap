@@ -14,16 +14,16 @@
 
 void	ra(t_stack *a)
 {
-	int	top;
+	int	data[0];
 	int	i;
 
-	top = a->data[0];
+	data[0] = a->data[0];
 	i = 1;
 	while (i < a->size)
 	{
 		a->data[i - 1] = a->data[i];
 		i++;
 	}
-	a->data[i - 1] = top;
+	a->data[i - 1] = data[0];
 	ft_printf("ra\n");
 }
