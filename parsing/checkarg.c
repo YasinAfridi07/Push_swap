@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checkarg.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkhan <fkhan@student.42abudhabi.ae>        +#+  +:+       +#+        */
+/*   By: yusman <yusman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 07:14:32 by yusman            #+#    #+#             */
-/*   Updated: 2023/05/21 21:46:33 by fkhan            ###   ########.fr       */
+/*   Updated: 2023/07/15 21:23:38 by yusman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,13 @@ void	letters(char *args)
 		if (is_digit(args[i]))
 		{
 			free(args);
-			ft_putstr_fd("1. Error\n", 2);
+			ft_putstr_fd("Error\n", 2);
 			exit(EXIT_FAILURE);
 		}
 		i++;
 	}
 }
+
 void	refactor_ac(t_stack *a, t_stack *b, char **av)
 {
 	char	*args;
@@ -92,6 +93,6 @@ void	refactor_ac(t_stack *a, t_stack *b, char **av)
 void	parsearg(t_stack *a, t_stack *b, char **av)
 {
 	refactor_ac(a, b, av);
-	is_sorted(a, b);
+	is_sorted(a);
 	is_dup(a, b);
 }

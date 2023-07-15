@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_sort_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkhan <fkhan@student.42abudhabi.ae>        +#+  +:+       +#+        */
+/*   By: yusman <yusman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/05 12:24:09 by fkhan             #+#    #+#             */
-/*   Updated: 2023/05/21 23:14:37 by fkhan            ###   ########.fr       */
+/*   Created: 2023/07/15 21:08:27 by yusman            #+#    #+#             */
+/*   Updated: 2023/07/15 21:50:37 by yusman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,11 @@ void	move_top_stack(int index, t_psinfo *info, int on_b)
 		return ;
 	}
 	i = size - 1;
+	test(i, index, on_b, info);
+}
+
+void	test(int i, int index, int on_b, t_psinfo *info)
+{
 	while (i-- >= index)
 	{
 		if (on_b)

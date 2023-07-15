@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stack_divide_conquer_utils.c                       :+:      :+:    :+:   */
+/*   ft_is_space.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkhan <fkhan@student.42abudhabi.ae>        +#+  +:+       +#+        */
+/*   By: yusman <yusman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/05 12:24:09 by fkhan             #+#    #+#             */
-/*   Updated: 2023/05/21 23:52:23 by fkhan            ###   ########.fr       */
+/*   Created: 2023/07/15 21:18:41 by yusman            #+#    #+#             */
+/*   Updated: 2023/07/15 21:18:42 by yusman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "libft.h"
 
-void	reverse_move(t_psinfo *info, char *f, int size)
+int	is_space(int c)
 {
-	int	i;
-
-	i = 0;
-	while (i < size)
-	{
-		if (!ft_strncmp(f, "rra", 3))
-			rra(&info->a);
-		else if (!ft_strncmp(f, "rrb", 3))
-			rrb(&info->b);
-		i++;
-	}
+	if (c == 32 || c == 11)
+		return (1);
+	return (0);
 }

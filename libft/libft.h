@@ -6,7 +6,7 @@
 /*   By: yusman <yusman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 16:58:55 by yusman            #+#    #+#             */
-/*   Updated: 2023/05/08 15:01:22 by yusman           ###   ########.fr       */
+/*   Updated: 2023/07/15 21:17:37 by yusman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,6 +74,6 @@ void		ft_lstclear(t_list **lst, void (*del)(void *));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 
 int			ft_lstsize(t_list *lst);
-int		is_space(int c);
+int			is_space(int c);
 
 #endif

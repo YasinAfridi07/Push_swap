@@ -6,7 +6,7 @@
 /*   By: yusman <yusman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 07:13:28 by yusman            #+#    #+#             */
-/*   Updated: 2023/05/14 20:58:51 by yusman           ###   ########.fr       */
+/*   Updated: 2023/07/15 21:24:11 by yusman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	sign_check(char *str, t_stack *a, t_stack *b, char **new_av)
 			k++;
 		if (k > 0)
 		{
-			ft_putstr_fd("2. Error\n", 2);
+			ft_putstr_fd("Error\n", 2);
 			free_split(new_av);
 			free_data(a, b, 1);
 		}
@@ -42,19 +42,19 @@ void	sign_check2(char *str, t_stack *a, t_stack *b, char **new_av)
 	{
 		if ((str[i] == '+' || str[i] == '-') && is_space(str[i + 1]))
 		{
-			ft_putstr_fd("3. Error\n", 2);
+			ft_putstr_fd("Error\n", 2);
 			free_split(new_av);
 			free_data(a, b, 1);
 		}
 		if (ft_isdigit(str[i]) && (str[i + 1] == '+' || str[i + 1] == '-'))
 		{
-			ft_putstr_fd("4. Error\n", 2);
+			ft_putstr_fd("Error\n", 2);
 			free_split(new_av);
 			free_data(a, b, 1);
 		}
 		if ((str[i] == '-' || str[i] == '+') && (!str[i + 1]))
 		{
-			ft_putstr_fd("5. Error\n", 2);
+			ft_putstr_fd("Error\n", 2);
 			free_split(new_av);
 			free_data(a, b, 1);
 		}
@@ -62,12 +62,12 @@ void	sign_check2(char *str, t_stack *a, t_stack *b, char **new_av)
 	}
 }
 
-void	is_sorted(t_stack *a, t_stack *b)
+void	is_sorted(t_stack *a)
 {
 	int	i;
 
 	i = 0;
-	while (a->data[i])
+	while (i < a->size - 1)
 	{
 		if (a->data[i] < a->data[i + 1])
 		{
@@ -79,7 +79,6 @@ void	is_sorted(t_stack *a, t_stack *b)
 	if (i == a->size)
 	{
 		free (a->data);
-		free (b->data);
 		exit(EXIT_SUCCESS);
 	}
 }
@@ -97,7 +96,7 @@ void	is_dup(t_stack *a, t_stack *b)
 		{
 			if (a->data[i] == a->data[j])
 			{
-				ft_putstr_fd("6. Error\n", 2);
+				ft_putstr_fd("Error\n", 2);
 				free (a->data);
 				free (b->data);
 				exit (EXIT_FAILURE);
@@ -107,7 +106,6 @@ void	is_dup(t_stack *a, t_stack *b)
 		i++;
 	}
 }
-// 2 1 2 3 // need to understand
 
 int	ps_atoi(char *str, t_stack *a, t_stack *b, char **new_av)
 {
@@ -129,7 +127,7 @@ int	ps_atoi(char *str, t_stack *a, t_stack *b, char **new_av)
 		if ((result > 2147483648 && sign == -1)
 			|| (result > 2147483647 && sign == 1))
 		{
-			ft_putstr_fd("7. Error\n", 2);
+			ft_putstr_fd("Error\n", 2);
 			free_split(new_av);
 			free_data(a, b, 1);
 		}

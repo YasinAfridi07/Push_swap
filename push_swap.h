@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fkhan <fkhan@student.42abudhabi.ae>        +#+  +:+       +#+        */
+/*   By: yusman <yusman@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/15 23:47:07 by yusman            #+#    #+#             */
-/*   Updated: 2023/05/21 23:52:40 by fkhan            ###   ########.fr       */
+/*   Updated: 2023/07/15 21:50:23 by yusman           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void		free_data(t_stack *a, t_stack *b, int flag);
 void		swap(int *a, int *b);
 int			ps_atoi(char *str, t_stack *a, t_stack *b, char **new_av);
 void		is_dup(t_stack *a, t_stack *b);
-void		is_sorted(t_stack *a, t_stack *b);
+void		is_sorted(t_stack *a);
 void		sign_check2(char *str, t_stack *a, t_stack *b, char **new_av);
 void		sign_check(char *str, t_stack *a, t_stack *b, char **new_av);
 void		refactor_ac(t_stack *a, t_stack *b, char **av);
@@ -130,5 +130,7 @@ void		insertsort_on_a(t_psinfo *info, int *sorted, int size);
 
 // stack_insertsort_b
 void		insertsort_on_b(t_psinfo *info, int *sorted, int size);
+
+void		test(int i, int index, int on_b, t_psinfo *info);
 
 #endif
